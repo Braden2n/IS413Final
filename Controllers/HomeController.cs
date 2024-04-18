@@ -41,6 +41,7 @@ public class HomeController : Controller
         {
             return Redirect(Request.Headers.Referer.ToString());
         }
+        ViewBag.Method = "Edit";
         return View("EntertainerForm", model);
     }
 
@@ -48,6 +49,7 @@ public class HomeController : Controller
     public IActionResult AddEntertainer()
     {
         var model = _repo.NewEntertainer();
+        ViewBag.Method = "Add";
         return View("EntertainerForm", model);
     }
 
@@ -66,18 +68,13 @@ public class HomeController : Controller
         {
             return Redirect(Request.Headers.Referer.ToString());
         }
-        return View();
+        return View(model);
     }
 
     [HttpPost]
-    public IActionResult DeleteEntertainer(int id)
+    public IActionResult DeleteEntertainer(Entertainer entertainer)
     {
-        var model = _repo.EntertainerById(id);
-        if (model == null)
-        {
-            return Redirect(Request.Headers.Referer.ToString());
-        }
-        _repo.DeleteEntertainer(model);
+        _repo.DeleteEntertainer(entertainer);
         return RedirectToAction("Entertainers");
     }
 }
