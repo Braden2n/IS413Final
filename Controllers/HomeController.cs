@@ -56,8 +56,12 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult SaveChanges(Entertainer entertainer)
     {
-        _repo.UpdateEntertainer(entertainer);
-        return RedirectToAction("Entertainers");
+        if (ModelState.IsValid)
+        {
+            _repo.UpdateEntertainer(entertainer);
+            return RedirectToAction("Entertainers");
+        }
+        return View("EntertainerForm", entertainer);
     }
 
     [HttpGet]
