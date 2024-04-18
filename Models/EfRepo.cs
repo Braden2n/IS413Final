@@ -28,7 +28,15 @@ public class EfRepo : IRepo
 
     public void UpdateEntertainer(Entertainer entertainer)
     {
-        _context.Entertainers.Update(entertainer);
+        var exists = _context.Entertainers.Any(e => e.EntertainerId == entertainer.EntertainerId);
+        if (exists)
+        {
+            _context.Entertainers.Update(entertainer);
+        }
+        else
+        {
+            _context.Entertainers.Add(entertainer);
+        }
         _context.SaveChanges();
     }
 
