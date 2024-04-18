@@ -20,4 +20,10 @@
       <_ContentIncludedByDefault Remove="Pages\Entertainers.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="EntertainmentAgency.sqlite">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

@@ -6,15 +6,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Adding Context
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     var connectionString = builder.Configuration["ConnectionStrings:EntertainmentAgency"];
     options.UseSqlite(connectionString);
 });
 
+// Adding Repo
 builder.Services.AddScoped<IRepo, EfRepo>();
-
-builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
