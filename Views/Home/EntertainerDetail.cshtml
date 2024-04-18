@@ -1,1 +1,39 @@
+@{
+    ViewData["Title"] = "Details";
+}
 @model Entertainer
+
+<div class="container">
+    <h1>@Model.EntStageName Details</h1>
+    <hr/>
+    <d1 class="row">
+        <dt class="col-sm-3">Stage Name:</dt>
+        <dd class="col-sm-9">@Model.EntStageName</dd>
+        <dt class="col-sm-3">SSN:</dt>
+        <dd class="col-sm-9">@Model.EntSsn</dd>
+        <dt class="col-sm-3">Street Address:</dt>
+        <dd class="col-sm-9">@Model.EntStreetAddress</dd>
+        <dt class="col-sm-3">City:</dt>
+        <dd class="col-sm-9">@Model.EntCity</dd>
+        <dt class="col-sm-3">State:</dt>
+        <dd class="col-sm-9">@Model.EntState</dd>
+        <dt class="col-sm-3">Zip Code:</dt>
+        <dd class="col-sm-9">@Model.EntZipCode</dd>
+        <dt class="col-sm-3">Phone Number:</dt>
+        <dd class="col-sm-9">@Model.EntPhoneNumber</dd>
+        <dt class="col-sm-3">Web Page:</dt>
+        <dd class="col-sm-9">@Model.EntWebPage</dd>
+        <dt class="col-sm-3">Email Address:</dt>
+        <dd class="col-sm-9">@Model.EntEmailAddress</dd>
+        <dt class="col-sm-3">Date Entered:</dt>
+        <dd class="col-sm-9">@Model.DateEntered</dd>
+    </d1>
+    <div class="row">
+        <div class="col-sm-6">
+            <a class="btn btn-primary" asp-controller="Home" asp-action="EditEntertainer" asp-route-id="@Model.EntertainerId">Edit</a>
+        </div>
+        <div class="col-sm-6">
+            <a class="btn btn-primary" asp-controller="Home" asp-action="ConfirmDeletion" asp-route-id="@Model.EntertainerId">Delete</a>
+        </div>
+    </div>
+</div>
