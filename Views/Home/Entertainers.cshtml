@@ -1,1 +1,10 @@
 @model IQueryable<Entertainer>
+
+<div class="container">
+    <ul>
+        @foreach (var e in Model)
+        {
+            <li>@e.EntStageName</li>
+        }
+    </ul>
+</div>
