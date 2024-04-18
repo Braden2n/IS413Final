@@ -13,49 +13,49 @@
         <div class="row">
             <div class="col-sm-3">Stage Name:</div>
             <div class="col-sm-9">
-                <input type="text" name="EntStageName" value="@Model.EntStageName">
+                <input type="text" name="EntStageName" value="@Model.EntStageName" required />
             </div>
         </div>
         <br/>
         <div class="row">
             <div class="col-sm-3">SSN:</div>
             <div class="col-sm-9">
-                <input type="text" name="EntSsn" value="@Model.EntSsn">
+                <input type="text" name="EntSsn" value="@Model.EntSsn" required />
             </div>
         </div>
         <br/>
         <div class="row">
             <div class="col-sm-3">Street Address:</div>
             <div class="col-sm-9">
-                <input type="text" name="EntStreetAddress" value="@Model.EntStreetAddress">
+                <input type="text" name="EntStreetAddress" value="@Model.EntStreetAddress" required />
             </div>
         </div>
         <br/>
         <div class="row">
             <div class="col-sm-3">City:</div>
             <div class="col-sm-9">
-                <input type="text" name="EntCity" value="@Model.EntCity">
+                <input type="text" name="EntCity" value="@Model.EntCity" required />
             </div>
         </div>
         <br/>
         <div class="row">
             <div class="col-sm-3">State:</div>
             <div class="col-sm-9">
-                <input type="text" name="EntState" value="@Model.EntState">
+                <input type="text" name="EntState" value="@Model.EntState" required />
             </div>
         </div>
         <br/>
         <div class="row">
             <div class="col-sm-3">Zip Code:</div>
             <div class="col-sm-9">
-                <input type="text" name="EntZipCode" value="@Model.EntZipCode">
+                <input type="text" name="EntZipCode" value="@Model.EntZipCode" required />
             </div>
         </div>
         <br/>
         <div class="row">
             <div class="col-sm-3">Phone Number:</div>
             <div class="col-sm-9">
-                <input type="text" name="EntPhoneNumber" value="@Model.EntPhoneNumber">
+                <input type="text" name="EntPhoneNumber" value="@Model.EntPhoneNumber" required />
             </div>
         </div>
         <br/>
@@ -69,7 +69,7 @@
         <div class="row">
             <div class="col-sm-3">Email Address:</div>
             <div class="col-sm-9">
-                <input type="text" name="EntEmailAddress" value="@Model.EntEmailAddress">
+                <input type="text" name="EntEmailAddress" value="@Model.EntEmailAddress" required />
             </div>
         </div>
         <br/>
@@ -78,11 +78,11 @@
             <div class="col-sm-9">
                 @if (method == "Edit")
                 {
-                    <input type="text" name="DateEntered" value="@Model.DateEntered" readonly />
+                    <input type="text" name="DateEntered" value="@Model.DateEntered" readonly required />
                 }
                 else
                 {
-                    <input type="text" name="DateEntered" value="@DateOnly.FromDateTime(DateTime.Today)" readonly />
+                    <input type="text" name="DateEntered" value="@DateOnly.FromDateTime(DateTime.Today)" readonly required />
                 }
             </div>
         </div>
