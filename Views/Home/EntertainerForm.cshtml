@@ -1,0 +1,86 @@
+@{
+    var method = ViewBag.Method ?? "Edit";
+    ViewData["Title"] = method + " Entertainer";
+}
+@model Entertainer
+
+
+<div class="container">
+    <h1>@method Entertainer</h1>
+    <hr/>
+    <form method="post" asp-controller="Home" asp-action="SaveChanges">
+        <input type="text" name="EntertainerId" value="@Model.EntertainerId" hidden="hidden">
+        <div class="row">
+            <div class="col-sm-3">Stage Name:</div>
+            <div class="col-sm-9">
+                <input type="text" name="EntStageName" value="@Model.EntStageName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">SSN:</div>
+            <div class="col-sm-9">
+                <input type="text" name="EntSsn" value="@Model.EntSsn">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">Street Address:</div>
+            <div class="col-sm-9">
+                <input type="text" name="EntStreetAddress" value="@Model.EntStreetAddress">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">City:</div>
+            <div class="col-sm-9">
+                <input type="text" name="EntCity" value="@Model.EntCity">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">State:</div>
+            <div class="col-sm-9">
+                <input type="text" name="EntState" value="@Model.EntState">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">Zip Code:</div>
+            <div class="col-sm-9">
+                <input type="text" name="EntZipCode" value="@Model.EntZipCode">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">Phone Number:</div>
+            <div class="col-sm-9">
+                <input type="text" name="EntPhoneNumber" value="@Model.EntPhoneNumber">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">Web Page:</div>
+            <div class="col-sm-9">
+                <input type="text" name="EntWebPage" value="@Model.EntWebPage">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">Email Address:</div>
+            <div class="col-sm-9">
+                <input type="text" name="EntEmailAddress" value="@Model.EntEmailAddress">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">Date Entered:</div>
+            <div class="col-sm-9">
+                @if (method == "Edit")
+                {
+                    <input type="text" name="DateEntered" value="@Model.DateEntered" readonly />
+                }
+                else
+                {
+                    <input type="text" name="DateEntered" value="@DateOnly.FromDateTime(DateTime.Today)" readonly />
+                }
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </form>
+</div>
