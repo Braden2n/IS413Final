@@ -1,10 +1,21 @@
+@{
+    ViewData["Title"] = "Entertainers";
+}
 @model IQueryable<Entertainer>
 
 <div class="container">
-    <ul>
+    <br/>
+    <br/>
+    <h1>Our Entertainers:</h1>
+    <br/>
+    <br/>
+    <ul class="list-group">
         @foreach (var e in Model)
         {
-            <li>@e.EntStageName</li>
+            <li class="list-group-item d-flex justify-content-between">
+                <span style="font-size: 1.2em; font-weight:  bold;">@e.EntStageName</span>
+                <a class="btn btn-primary btn-sm float-right" asp-controller="Home" asp-action="EntertainerDetail" asp-route-id="@e.EntertainerId">Details</a>
+            </li>
         }
     </ul>
 </div>
