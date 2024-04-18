@@ -8,7 +8,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlite(builder.Configuration.GetConnectionString("EntertainmentAgency"));
+    var connectionString = builder.Configuration["ConnectionStrings:EntertainmentAgency"];
+    options.UseSqlite(connectionString);
 });
 
 builder.Services.AddScoped<IRepo, EfRepo>();
