@@ -10,7 +10,7 @@
         <dt class="col-sm-3">Stage Name:</dt>
         <dd class="col-sm-8">@Model.EntStageName</dd>
     </dl>
-    <p>Are you sure you want to delete this entertainer?</p>
+    <p>Are you sure you want to delete @(Model.EntStageName ?? "this entertainer")?</p>
     <form method="post" asp-controller="Home" asp-action="DeleteEntertainer">
         <input type="hidden" name="EntertainerId" value="@Model.EntertainerId" />
         <br/>
