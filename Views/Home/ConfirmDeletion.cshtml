@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Delete Entertainer";
+}
+@model Entertainer
+
+<div class="container">
+    <h1>Delete Confirmation:</h1>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-3">Stage Name:</dt>
+        <dd class="col-sm-8">@Model.EntStageName</dd>
+    </dl>
+    <p>Are you sure you want to delete this entertainer?</p>
+    <form method="post" asp-controller="Home" asp-action="DeleteEntertainer">
+        <input type="hidden" name="EntertainerId" value="@Model.EntertainerId" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="@Url.Action("EntertainerDetail", "Home", new { id = Model.EntertainerId})" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
