@@ -5,12 +5,7 @@
 
 <div class="container">
     <br/>
-    <br/>
-    <div class="d-flex justify-content-between align-items-center">
-        <h1>Our Entertainers:</h1>  
-        <a class="btn btn-success" asp-controller="Home" asp-action="AddEntertainer">Add Entertainer</a>
-    </div>
-    <br/>
+    <h1>Our Entertainers:</h1>
     <br/>
     <ul class="list-group">
         @foreach (var e in Model)
@@ -21,4 +16,7 @@
             </li>
         }
     </ul>
+    <br/>
+    <a class="btn btn-success" asp-controller="Home" asp-action="AddEntertainer">Add Entertainer</a>
+    <br/>
 </div>
