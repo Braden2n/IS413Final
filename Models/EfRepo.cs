@@ -7,4 +7,11 @@ public class EfRepo : IRepo
     {
         _context = context;
     }
+
+    public IQueryable<Entertainer> Entertainers => _context.Entertainers;
+
+    public Entertainer? EntertainerById(int id)
+    {
+        return _context.Entertainers.FirstOrDefault(e => e.EntertainerID == id);
+    }
 }
