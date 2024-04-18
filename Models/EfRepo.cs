@@ -12,6 +12,6 @@ public class EfRepo : IRepo
 
     public Entertainer? EntertainerById(int id)
     {
-        return _context.Entertainers.FirstOrDefault(e => e.EntertainerID == id);
+        return _context.Entertainers.FirstOrDefault(e => e.EntertainerId == id);
     }
 }
